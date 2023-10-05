@@ -14,7 +14,7 @@ If you come here independently, no need to worry. Start similar, pick the defaul
 ```shell
 mkdir -p ~/SWAN_projects/POG-Exercises
 cd ~/SWAN_projects/POG-Exercises
-git clone https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git
+git clone https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git -b podas
 ```
 2. Start ipython notebooks via SWAN  
 You can now go back to the browser tab you started with that holds your SWAN projects. Navigate to the recently cloned directory and open the individual exercises from the `notebooks` folder.
@@ -35,7 +35,7 @@ and a similar command once more but for `envs_dirs` and another path on /eos to 
 ```shell
 mkdir -p ~/private/CMSPODAS2023/POG-Exercises
 cd ~/private/CMSPODAS2023/POG-Exercises
-git clone ssh://git@gitlab.cern.ch:7999/cms-podas23/pog/b-tagging.git
+git clone ssh://git@gitlab.cern.ch:7999/cms-podas23/pog/b-tagging.git -b podas
 ```
 (_Alternatively, if you don't have your ssh-key connected to github, replace the above URL with `https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git` in the command_)
 
@@ -77,9 +77,11 @@ Learn how network performance is evaluated and which performance metrics play a 
 Explore how performance depends on kinematic quantities related to the jet. This is one concept to keep in mind, differential distributions *do* matter (not only inclusive metrics), in this case explored for simple features like pseudorapidity and transverse momentum. Most likely you will also need to adapt to differentially measured scale factors (in bins of disciminators, though) when using such algorithms in an analysis.
 ## Contact
 **_Sebastian Wuchterl, 2023_**  
-:email: [sebastian.wuchterl@cern.ch](mailto:sebastian.wuchterl@cern.ch), :octocat: [@SWuchterl](https://github.com/SWuchterl)
+:email: [sebastian.wuchterl@cern.ch](mailto:sebastian.wuchterl@cern.ch), :computer: [@SWuchterl](https://github.com/SWuchterl)
+
 **_Svenja Diekmann, 2023_**  
-:email: [svenja.diekmann@cern.ch](mailto:svenja.diekmann@cern.ch), :octocat: [@SWuchterl](https://github.com/SWuchterl)
+:email: [svenja.diekmann@cern.ch](mailto:svenja.diekmann@cern.ch), :computer: [@SWuchterl](https://github.com/SWuchterl)
+
 Orignal credits to:
 **Annika Stein, 2023_**  
-:email: [annika-stein@cern.ch](mailto:annika-stein@cern.ch), :octocat: [@SWuchterl](https://github.com/AnnikaStein)
+:email: [annika-stein@cern.ch](mailto:annika-stein@cern.ch), :computer: [@SWuchterl](https://github.com/AnnikaStein)
