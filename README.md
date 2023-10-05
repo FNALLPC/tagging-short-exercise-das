@@ -80,8 +80,8 @@ Explore how performance depends on kinematic quantities related to the jet. This
 :email: [sebastian.wuchterl@cern.ch](mailto:sebastian.wuchterl@cern.ch), :computer: [@SWuchterl](https://github.com/SWuchterl)
 
 **_Svenja Diekmann, 2023_**  
-:email: [svenja.diekmann@cern.ch](mailto:svenja.diekmann@cern.ch), :computer: [@SWuchterl](https://github.com/SWuchterl)
+:email: [svenja.diekmann@cern.ch](mailto:svenja.diekmann@cern.ch), :computer: [@SvenjaDiekmann](https://github.com/SvenjaDiekmann)
 
 Orignal credits to:
-**Annika Stein, 2023_**  
-:email: [annika-stein@cern.ch](mailto:annika-stein@cern.ch), :computer: [@SWuchterl](https://github.com/AnnikaStein)
+**_Annika Stein, 2023_**  
+:email: [annika-stein@cern.ch](mailto:annika-stein@cern.ch), :computer: [@AnnikaStein](https://github.com/AnnikaStein)
