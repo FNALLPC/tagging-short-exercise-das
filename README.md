@@ -1,20 +1,20 @@
-# Flavour-Tagging Short Exercise
+# BTV POG Exercise
 
-Welcome to the Flavour-Tagging Short Exercise held at CMSDAS@CERN 2023!
+Welcome to the BTV POG Exercise held at CMSPO&DAS@Hamburg 2023!
 
 ## Intro
-A set of slides with introductory material, definitions, useful links is available at [Indico](https://indico.cern.ch/event/1257234/timetable/#44-short-exercise-4b-flavour-t).
+A set of slides with introductory material, definitions, useful links is available at [Indico](https://indico.desy.de/event/38207/contributions/152481/).
 ## Setup with SWAN
 Connect to https://swan.cern.ch/
 
-If you are a participant of CMSDAS@CERN 2023 for this Short Exercise, chances are all you need to do is to go to pick the default environment (no additional environment script necessary, no paths), choose 10GB memory, and then navigate to Share -> Projects shared with me to find the project called „CERN-CMS-DAS-2023-Short-Ex-FTAG“. Pick this project, it will contain all the relevant notebooks for the exercises.
+If you are a participant of CMSPO&DAS@Hamburg 2023 for this POG exercise, chances are all you need to do is to go to pick the default environment (no additional environment script necessary, no paths), choose 10GB memory, and then navigate to Share -> Projects shared with me to find the project called „CMS-PODAS-2023-POG-Ex-BTV“. Pick this project, it will contain all the relevant notebooks for the exercises.
 
 If you come here independently, no need to worry. Start similar, pick the default environment, choose 10GB memory, click the Console symbol on the top navigation bar ("New terminal") and proceed with these commands:
 1. Checkout the exercise repository into new directory (example directory given below for convenience)
 ```shell
-mkdir -p ~/SWAN_projects/Short-Exercises
-cd ~/SWAN_projects/Short-Exercises
-git clone https://github.com/CERN-CMS-DAS-2023/short-ex-ftag.git
+mkdir -p ~/SWAN_projects/POG-Exercises
+cd ~/SWAN_projects/POG-Exercises
+git clone https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git
 ```
 2. Start ipython notebooks via SWAN  
 You can now go back to the browser tab you started with that holds your SWAN projects. Navigate to the recently cloned directory and open the individual exercises from the `notebooks` folder.
@@ -33,11 +33,11 @@ and a similar command once more but for `envs_dirs` and another path on /eos to 
 
 2. Checkout this repository into new directory (example directory given below for convenience)
 ```shell
-mkdir -p ~/private/CMSDAS2023/Short-Exercises
-cd ~/private/CMSDAS2023/Short-Exercises
-git clone git@github.com:CERN-CMS-DAS-2023/short-ex-ftag.git
+mkdir -p ~/private/CMSPODAS2023/POG-Exercises
+cd ~/private/CMSPODAS2023/POG-Exercises
+git clone ssh://git@gitlab.cern.ch:7999/cms-podas23/pog/b-tagging.git
 ```
-(_Alternatively, if you don't have your ssh-key connected to github, replace the above URL with `https://github.com/CERN-CMS-DAS-2023/short-ex-ftag.git` in the command_)
+(_Alternatively, if you don't have your ssh-key connected to github, replace the above URL with `https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git` in the command_)
 
 3. Install relevant python packages into a conda-environment (comes with the Git repo)
 ```shell
@@ -49,7 +49,7 @@ screen -S server
 ```
 In that new screen-session, make sure to have the active conda environment:
 ```shell
-conda activate FTAG-Tutorial
+conda activate btag-Tutorial
 ```  
 and start a jupyter lab server with forwarding to a specific port (choose a random four-digit number, don't all choose the same - the 7890 is just an example!)
 ```shell
@@ -76,5 +76,10 @@ Learn how network performance is evaluated and which performance metrics play a 
 ### Bonus
 Explore how performance depends on kinematic quantities related to the jet. This is one concept to keep in mind, differential distributions *do* matter (not only inclusive metrics), in this case explored for simple features like pseudorapidity and transverse momentum. Most likely you will also need to adapt to differentially measured scale factors (in bins of disciminators, though) when using such algorithms in an analysis.
 ## Contact
-**_Annika Stein, 2023_**  
-:email: [annika-stein@cern.ch](mailto:annika-stein@cern.ch), :octocat: [@AnnikaStein](https://github.com/AnnikaStein)
+**_Sebastian Wuchterl, 2023_**  
+:email: [sebastian.wuchterl@cern.ch](mailto:sebastian.wuchterl@cern.ch), :octocat: [@SWuchterl](https://github.com/SWuchterl)
+**_Svenja Diekmann, 2023_**  
+:email: [svenja.diekmann@cern.ch](mailto:svenja.diekmann@cern.ch), :octocat: [@SWuchterl](https://github.com/SWuchterl)
+Orignal credits to:
+**Annika Stein, 2023_**  
+:email: [annika-stein@cern.ch](mailto:annika-stein@cern.ch), :octocat: [@SWuchterl](https://github.com/AnnikaStein)
