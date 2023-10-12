@@ -35,7 +35,7 @@ and a similar command once more but for `envs_dirs` and another path on /eos to 
 ```shell
 mkdir -p ~/private/CMSPODAS2023/POG-Exercises
 cd ~/private/CMSPODAS2023/POG-Exercises
-git clone ssh://git@gitlab.cern.ch:7999/cms-podas23/pog/b-tagging.git -b podas
+git clone https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git -b podas
 ```
 (_Alternatively, if you don't have your ssh-key connected to github, replace the above URL with `https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git` in the command_)
 
@@ -55,14 +55,14 @@ and start a jupyter lab server with forwarding to a specific port (choose a rand
 ```shell
 jupyter lab --no-browser --port=7890
 ```
-Note down the lxplus-machine you were working with (most likely, something like lxplus7XY with XY some numbers. Note down the port you have chosen above. Copy-paste the first http-link presented to you after starting the jupyter server instance, this should be opened by you in a new web browser tab on your own machine. In this first ssh connection, you may detach from the screen via `Ctrl + A` (hold `Ctrl`) followed by `Ctrl + D`. One can always go back to this screen-session via `screen -r server`. From a new ssh-terminal (at your own machine!), connect to the port on which you started the server, pick the exact machine you worked with for the previous step:
+Note down the naf-machine you were working with (most likely, something like naf with XY some numbers. Note down the port you have chosen above. Copy-paste the first http-link presented to you after starting the jupyter server instance, this should be opened by you in a new web browser tab on your own machine. In this first ssh connection, you may detach from the screen via `Ctrl + A` (hold `Ctrl`) followed by `Ctrl + D`. One can always go back to this screen-session via `screen -r server`. From a new ssh-terminal (at your own machine!), connect to the port on which you started the server, pick the exact machine you worked with for the previous step:
 Example:
 ```shell
-ssh -L 7890:localhost:7890 anstein@lxplus702.cern.ch
+ssh -L 7890:localhost:7890 sewuchte@naf-cms.desy.de
 ```
 General case, to be filled by you:
 ```shell
-ssh -L port-you-picked:localhost:port-you-picked your-lxplus-username@lxplusXYZ.cern.ch
+ssh -L port-you-picked:localhost:port-you-picked your-naf-username@naf-cmsXYZ.desy.de
 ```
 Now open the http-link from jupyter lab in your browser and navigate to the short exercise. All packages to work with the exercises should be available from there, you don't need to use the terminal from now on, just keep the session open while you're working.
 
