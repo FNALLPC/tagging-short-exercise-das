@@ -4,7 +4,7 @@ Welcome to the BTV POG Exercise held at CMSPO&DAS@Hamburg 2023!
 
 ## Intro
 A set of slides with introductory material, definitions, useful links is available at [Indico](https://indico.desy.de/event/38207/contributions/152481/).
-## Setup with SWAN
+<!-- ## Setup with SWAN
 Connect to https://swan.cern.ch/
 
 If you are a participant of CMSPO&DAS@Hamburg 2023 for this POG exercise, chances are all you need to do is to go to pick the default environment (no additional environment script necessary, no paths), choose 10GB memory, and then navigate to Share -> Projects shared with me to find the project called „CMS-PODAS-2023-POG-Ex-BTV“. Pick this project, it will contain all the relevant notebooks for the exercises.
@@ -17,25 +17,23 @@ cd ~/SWAN_projects/POG-Exercises
 git clone https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git -b podas
 ```
 2. Start ipython notebooks via SWAN  
-You can now go back to the browser tab you started with that holds your SWAN projects. Navigate to the recently cloned directory and open the individual exercises from the `notebooks` folder.
+You can now go back to the browser tab you started with that holds your SWAN projects. Navigate to the recently cloned directory and open the individual exercises from the `notebooks` folder. -->
 
-## Alternatively: Setup with lxplus
-To start with the exercises, perform these initial steps for the setup at lxplus (e.g. after doing `ssh -l your-lxplus-username lxplus.cern.ch` from your own machine):
+## Setup with lxplus
+To start with the exercises, perform these initial steps for the setup at lxplus (e.g. after doing `ssh -l your-lxplus-username@lxplus.cern.ch` from your own machine):
 
 1. Get Miniconda (if you have not yet done so in another exercise)
 ```shell
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
-Special note if you obtained your lxplus computing account rather recently (2021 or later), and don’t have access to an AFS Workspace but only EOS, installation may take a while, therefore we recommend (if possible) to start early with the instructions. You may have to add the following update to the conda configuration:
-`conda config --add pkgs_dirs /new_path_pkgs/` (where `/new_path_pkgs` would be somewhere on your /eos directory to not fill your personal AFS user space)
-and a similar command once more but for `envs_dirs` and another path on /eos to store the environments. That way your AFS stays clean and operational.
+Special note: installation may take a while, therefore we recommend (if possible) to start early with the instructions. 
 
 2. Checkout this repository into new directory (example directory given below for convenience)
 ```shell
-mkdir -p ~/private/CMSPODAS2023/POG-Exercises
-cd ~/private/CMSPODAS2023/POG-Exercises
-git clone https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git -b podas
+mkdir -p ~/private/Tagging
+cd ~/private/Tagging
+git clone https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git -b HATS2024
 ```
 (_Alternatively, if you don't have your ssh-key connected to github, replace the above URL with `https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git` in the command_)
 
@@ -51,18 +49,18 @@ In that new screen-session, make sure to have the active conda environment:
 ```shell
 conda activate btag-Tutorial
 ```  
-and start a jupyter lab server with forwarding to a specific port (choose a random four-digit number, don't all choose the same - the 7890 is just an example!)
+and start a jupyter lab server with forwarding to a specific port (choose a random four-digit number, don't all choose the same - the 7890 is just an example, do not use 7890!)
 ```shell
 jupyter lab --no-browser --port=7890
 ```
-Note down the naf-machine you were working with (most likely, something like naf with XY some numbers. Note down the port you have chosen above. Copy-paste the first http-link presented to you after starting the jupyter server instance, this should be opened by you in a new web browser tab on your own machine. In this first ssh connection, you may detach from the screen via `Ctrl + A` (hold `Ctrl`) followed by `Ctrl + D`. One can always go back to this screen-session via `screen -r server`. From a new ssh-terminal (at your own machine!), connect to the port on which you started the server, pick the exact machine you worked with for the previous step:
+Note down the machine you were working with (most likely, something like naf with XY some numbers. Note down the port you have chosen above. Copy-paste the first http-link presented to you after starting the jupyter server instance, this should be opened by you in a new web browser tab on your own machine. In this first ssh connection, you may detach from the screen via `Ctrl + A` (hold `Ctrl`) followed by `Ctrl + D`. One can always go back to this screen-session via `screen -r server`. From a new ssh-terminal (**on your own machine!**), connect to the port on which you started the server, pick the exact machine you worked with for the previous step:
 Example:
 ```shell
-ssh -L 7890:localhost:7890 sewuchte@naf-cms.desy.de
+ssh -L 7890:localhost:7890 username@lxplus934.cern.ch
 ```
 General case, to be filled by you:
 ```shell
-ssh -L port-you-picked:localhost:port-you-picked your-naf-username@naf-cmsXYZ.desy.de
+ssh -L port-you-picked:localhost:port-you-picked your-naf-username@lxplusXYZ.cern.ch
 ```
 Now open the http-link from jupyter lab in your browser and navigate to the short exercise. All packages to work with the exercises should be available from there, you don't need to use the terminal from now on, just keep the session open while you're working.
 
@@ -76,11 +74,8 @@ Learn how network performance is evaluated and which performance metrics play a 
 ### Bonus
 Explore how performance depends on kinematic quantities related to the jet. This is one concept to keep in mind, differential distributions *do* matter (not only inclusive metrics), in this case explored for simple features like pseudorapidity and transverse momentum. Most likely you will also need to adapt to differentially measured scale factors (in bins of disciminators, though) when using such algorithms in an analysis.
 ## Contact
-**_Sebastian Wuchterl, 2023_**  
-:email: [sebastian.wuchterl@cern.ch](mailto:sebastian.wuchterl@cern.ch), :computer: [@SWuchterl](https://github.com/SWuchterl)
-
-**_Svenja Diekmann, 2023_**  
-:email: [svenja.diekmann@cern.ch](mailto:svenja.diekmann@cern.ch), :computer: [@SvenjaDiekmann](https://github.com/SvenjaDiekmann)
+**_Spandan Mondal, 2024_**  
+:email: [spandan.mondal@cern.ch](mailto:spandan.mondal@cern.ch)
 
 Orignal credits to:
 **_Annika Stein, 2023_**  
