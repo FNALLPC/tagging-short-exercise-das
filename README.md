@@ -33,7 +33,8 @@ Special note: installation may take a while, therefore we recommend (if possible
 ```shell
 mkdir -p ~/private/Tagging
 cd ~/private/Tagging
-git clone https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git -b HATS2024
+git clone ssh://git@gitlab.cern.ch:7999/cms-analysis/cmsdas/pog/b-tagging.git -b HATS2024
+cd b-tagging
 ```
 (_Alternatively, if you don't have your ssh-key connected to github, replace the above URL with `https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git` in the command_)
 
@@ -41,31 +42,42 @@ git clone https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git -b HATS2024
 ```shell
 conda env create -f env.yml
 ```
-4. Connect to a screen session (start jupyter lab server) and open in browser
+4. Connect to a screen session (to start jupyter lab server and open in browser). A screen session ensures that your jupyter server keeps running within lxplus even if your ssh session get disconnected from lxplus.
 ```shell
 screen -S server
 ```
-In that new screen-session, make sure to have the active conda environment:
+Within that new screen-session, make sure to have the active conda environment:
 ```shell
-conda activate btag-Tutorial
+conda activate FTAG-Tutorial
 ```  
-and start a jupyter lab server with forwarding to a specific port (choose a random four-digit number, don't all choose the same - the 7890 is just an example, do not use 7890!)
+and start a jupyter lab server with forwarding to a specific port (choose a random four-digit number XXXX: the 7890 is just an example, ***do not use 7890***!)
 ```shell
 jupyter lab --no-browser --port=7890
 ```
-Note down the machine you were working with (most likely, something like naf with XY some numbers. Note down the port you have chosen above. Copy-paste the first http-link presented to you after starting the jupyter server instance, this should be opened by you in a new web browser tab on your own machine. In this first ssh connection, you may detach from the screen via `Ctrl + A` (hold `Ctrl`) followed by `Ctrl + D`. One can always go back to this screen-session via `screen -r server`. From a new ssh-terminal (**on your own machine!**), connect to the port on which you started the server, pick the exact machine you worked with for the previous step:
+Note down
+- the machine you were working with (most likely, something like lxplusXYZ).
+- the port you have chosen above.
+- the first http-link presented to you after starting the jupyter server instance (something like http://localhost:XXXX...). You can copy this with `Ctrl/Cmd+C`
+
+Useful `screen` commands: Within this ssh connection, you may detach from the screen via `Ctrl + A` (hold down `Ctrl`) followed by `D` (while `Ctrl` is pressed). One can always go back to this screen-session via `screen -r server` from the same lxplus machine.
+
+On your **own laptop/machine**: from a new terminal, connect to the port on which you started the server (pick the exact machine you worked with for the previous step):
 Example:
 ```shell
 ssh -L 7890:localhost:7890 username@lxplus934.cern.ch
 ```
-General case, to be filled by you:
+General case:
 ```shell
-ssh -L port-you-picked:localhost:port-you-picked your-naf-username@lxplusXYZ.cern.ch
+ssh -L XXXX:localhost:XXXX your-username@lxplusXYZ.cern.ch
 ```
-Now open the http-link from jupyter lab in your browser and navigate to the short exercise. All packages to work with the exercises should be available from there, you don't need to use the terminal from now on, just keep the session open while you're working.
+Now open your browser and paste the http-link you copied. Navigate to `notebooks` on your left panel.
+
+All packages to work with the exercises should be available from there, you don't need to use the terminal from now on, just keep the session open while you're working.
 
 ## Tutorials
-All individual tutorials / exercises are available from the `notebooks` directory. There are three .ipynb files which are plug-and-play, just (double-)click to open in SWAN (jupyter lab) and follow the instructions inside.
+All individual tutorials / exercises are available from the `notebooks` directory. There are three .ipynb files which are plug-and-play, just (double-)click to open and follow the instructions inside.
+
+Jupyter tip: To run a command, click on it inside the Jupyter notebook and click the play button on the top panel. You can edit the command and rerun it by clicking the run button again. Click the play button again to run the next command, and so on.
 
 ### Inputs, Targets and Tagger Outputs
 Explore the inputs which are used to perform jet flavour tagging with some example files. Understand what the machine learning algorithms need to predict by investigating the targets, and compare with what the taggers actually do when passing inputs through the networks by looking at the output scores.
