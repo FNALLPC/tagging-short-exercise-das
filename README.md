@@ -36,7 +36,7 @@ cd ~/private/Tagging
 git clone ssh://git@gitlab.cern.ch:7999/cms-analysis/cmsdas/pog/b-tagging.git -b HATS2024
 cd b-tagging
 ```
-(_Alternatively, if you don't have your ssh-key connected to github, replace the above URL with `https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git` in the command_)
+(_Alternatively, if you don't have your ssh-key connected to github, replace the above URL with `https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git` in the command, but this can complicate the authentication process._)
 
 3. Install relevant python packages into a conda-environment (comes with the Git repo)
 ```shell
@@ -86,10 +86,13 @@ Learn how network performance is evaluated and which performance metrics play a 
 ### Bonus
 Explore how performance depends on kinematic quantities related to the jet. This is one concept to keep in mind, differential distributions *do* matter (not only inclusive metrics), in this case explored for simple features like pseudorapidity and transverse momentum. Most likely you will also need to adapt to differentially measured scale factors (in bins of disciminators, though) when using such algorithms in an analysis.
 ## Contact
-**_Spandan Mondal, HATS 2024_**  
+This session:
+
+**_Spandan Mondal, 2024_**  
 :email: [spandan.mondal@cern.ch](mailto:spandan.mondal@cern.ch), :computer: [@mondalspandan](https://github.com/mondalspandan)
 
-Maintenance:
+Maintained by:
+
 **_Sebastian Wuchterl, CMS PO&DAS 2023_**  
 :email: [sebastian.wuchterl@cern.ch](mailto:sebastian.wuchterl@cern.ch), :computer: [@SWuchterl](https://github.com/SWuchterl)
 
