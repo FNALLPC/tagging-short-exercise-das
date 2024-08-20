@@ -41,11 +41,13 @@ conda env create -f env.yml     #This will take a while
 python -m ipykernel install --user --name=FTAG-Tutorial
 ```
 
-- Go back to the file browser and avigate to `b-tagging/notebooks`. Your exercise notebooks are available here. Open the first notebook to start the exercise.
+- Go back to the file browser and navigate to `b-tagging/notebooks`. Your exercise notebooks are available here. Open the first notebook to start the exercise.
 
 
 ### Option 2: Setup with lxplus
-In case you cannot set things up on Purdue AF, perform these initial steps for the setup at lxplus (e.g. after doing `ssh -l your-lxplus-username@lxplus.cern.ch` from your own machine):
+<details>
+  <summary>Click here if you cannot set things up on Purdue AF...</summary>
+Perform these initial steps for the setup at lxplus (e.g. after doing `ssh -l your-lxplus-username@lxplus.cern.ch` from your own machine):
 
 1. Get Miniconda (if you have not yet done so in another exercise)
 ```shell
@@ -97,6 +99,7 @@ ssh -L XXXX:localhost:XXXX your-username@lxplusXYZ.cern.ch
 Now open your browser and paste the http-link you copied. Navigate to `notebooks` on your left panel.
 
 All packages to work with the exercises should be available from there, you don't need to use the terminal from now on, just keep the session open while you're working.
+</details>
 
 ## Tutorials
 All individual tutorials / exercises are available from the `notebooks` directory. There are three .ipynb files which are plug-and-play, just (double-)click to open and follow the instructions inside.
