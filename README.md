@@ -19,8 +19,33 @@ git clone https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git -b podas
 2. Start ipython notebooks via SWAN  
 You can now go back to the browser tab you started with that holds your SWAN projects. Navigate to the recently cloned directory and open the individual exercises from the `notebooks` folder. -->
 
-## Setup with lxplus
-To start with the exercises, perform these initial steps for the setup at lxplus (e.g. after doing `ssh -l your-lxplus-username@lxplus.cern.ch` from your own machine):
+### Option 1: Setup with Purdue AF
+
+
+- Navigate to the [Purdue AF website](https://analysis-facility.physics.purdue.edu/) and click “Login to Purdue Analysis Facility”.
+- On the CILogon page, choose CERN account to log in (using Fermilab or Purdue credentials is also possible).
+- You will be redirected to the “Server Options” page. The default resource selection (4 CPUs, 16 GB RAM) is enough for the HATS exercises, but you can select more resources if needed. **Do not add GPUs** to your session – there are not enough GPUs for all participants.
+- Click “Start” to create your Analysis Facility session. It may take a couple of minutes to load.
+- Done! Your session is ready.
+
+- On the left panel, click on the "Git" icon. Then click on "Clone a Repository".
+- Paste this git path in the text box `https://gitlab.cern.ch/cms-analysis/cmsdas/pog/b-tagging.git`.
+- Enter your CERN username and password in the prompt.
+- Go back to the file browser by clicking on the top "File Browser" icon in the left panel. You should now see a new `b-tagging` directory.
+
+- Open a terminal from the main workspace (under "Other").
+- Type
+```shell
+cd b-tagging
+conda env create -f env.yml     #This will take a while
+python -m ipykernel install --user --name=FTAG-Tutorial
+```
+
+- Go back to the file browser and avigate to `b-tagging/notebooks`. Your exercise notebooks are available here. Open the first notebook to start the exercise.
+
+
+### Option 2: Setup with lxplus
+In case you cannot set things up on Purdue AF, perform these initial steps for the setup at lxplus (e.g. after doing `ssh -l your-lxplus-username@lxplus.cern.ch` from your own machine):
 
 1. Get Miniconda (if you have not yet done so in another exercise)
 ```shell
@@ -33,10 +58,9 @@ Special note: installation may take a while, therefore we recommend (if possible
 ```shell
 mkdir -p ~/private/Tagging
 cd ~/private/Tagging
-git clone ssh://git@gitlab.cern.ch:7999/cms-analysis/cmsdas/pog/b-tagging.git -b HATS2024
+git clone https://gitlab.cern.ch/cms-analysis/cmsdas/pog/b-tagging.git -b HATS2024  # Enter your CERN username and password when prompted
 cd b-tagging
 ```
-(_Alternatively, if you don't have your ssh-key connected to github, replace the above URL with `https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git` in the command, but this can complicate the authentication process._)
 
 3. Install relevant python packages into a conda-environment (comes with the Git repo)
 ```shell
