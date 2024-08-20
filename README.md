@@ -1,9 +1,9 @@
-# BTV POG Exercise
+# Tagging HATS
 
-Welcome to the BTV POG Exercise held at CMSPO&DAS@Hamburg 2023!
+Welcome to the Tagging HATS 2024!
 
 ## Intro
-A set of slides with introductory material, definitions, useful links is available at [Indico](https://indico.desy.de/event/38207/contributions/152481/).
+A set of slides with introductory material, definitions, useful links is available on [Indico](https://indico.cern.ch/event/1443889/sessions/560661/attachments/2913418/5112216/HATS2024.pdf).
 <!-- ## Setup with SWAN
 Connect to https://swan.cern.ch/
 
@@ -86,8 +86,16 @@ Learn how network performance is evaluated and which performance metrics play a 
 ### Bonus
 Explore how performance depends on kinematic quantities related to the jet. This is one concept to keep in mind, differential distributions *do* matter (not only inclusive metrics), in this case explored for simple features like pseudorapidity and transverse momentum. Most likely you will also need to adapt to differentially measured scale factors (in bins of disciminators, though) when using such algorithms in an analysis.
 ## Contact
-**_Spandan Mondal, 2024_**  
-:email: [spandan.mondal@cern.ch](mailto:spandan.mondal@cern.ch)
+**_Spandan Mondal, HATS 2024_**  
+:email: [spandan.mondal@cern.ch](mailto:spandan.mondal@cern.ch), :computer: [@mondalspandan](https://github.com/mondalspandan)
+
+Maintenance:
+**_Sebastian Wuchterl, CMS PO&DAS 2023_**  
+:email: [sebastian.wuchterl@cern.ch](mailto:sebastian.wuchterl@cern.ch), :computer: [@SWuchterl](https://github.com/SWuchterl)
+
+**_Svenja Diekmann, CMS PO&DAS 2023_**  
+:email: [svenja.diekmann@cern.ch](mailto:svenja.diekmann@cern.ch), :computer: [@SvenjaDiekmann](https://github.com/SvenjaDiekmann)
+
 
 Orignal credits to:
 **_Annika Stein, 2023_**  
