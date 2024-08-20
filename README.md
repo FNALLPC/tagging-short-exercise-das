@@ -106,10 +106,12 @@ All individual tutorials / exercises are available from the `notebooks` director
 
 Jupyter tip: To run a command, click on it inside the Jupyter notebook and click the play button on the top panel. You can edit the command and rerun it by clicking the run button again. Click the play button again to run the next command, and so on.
 
-### Inputs, Targets and Tagger Outputs
-Explore the inputs which are used to perform jet flavour tagging with some example files. Understand what the machine learning algorithms need to predict by investigating the targets, and compare with what the taggers actually do when passing inputs through the networks by looking at the output scores.
+### Acessing Tagger Outputs
+Access AK4 and AK8 jet tagger information from standard NanoAOD files. Explore how these distributions look like for various flavours of jets and heavy objects.
 ### Performance
 Learn how network performance is evaluated and which performance metrics play a key role for flavour tagging. Perform more studies to evaluate performance as a function of certain parameters and compare across samples.
+### Scale factors
+Scale Factors are essential before we can use taggers on real collision data. Explore one of the methods that are used to compare simulation and data and extract correction factors.
 ### Bonus
 Explore how performance depends on kinematic quantities related to the jet. This is one concept to keep in mind, differential distributions *do* matter (not only inclusive metrics), in this case explored for simple features like pseudorapidity and transverse momentum. Most likely you will also need to adapt to differentially measured scale factors (in bins of disciminators, though) when using such algorithms in an analysis.
 ## Contact
