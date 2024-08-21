@@ -19,8 +19,35 @@ git clone https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git -b podas
 2. Start ipython notebooks via SWAN  
 You can now go back to the browser tab you started with that holds your SWAN projects. Navigate to the recently cloned directory and open the individual exercises from the `notebooks` folder. -->
 
-## Setup with lxplus
-To start with the exercises, perform these initial steps for the setup at lxplus (e.g. after doing `ssh -l your-lxplus-username@lxplus.cern.ch` from your own machine):
+### Option 1: Setup with Purdue AF
+
+
+- Navigate to the [Purdue AF website](https://analysis-facility.physics.purdue.edu/) and click “Login to Purdue Analysis Facility”.
+- On the CILogon page, choose CERN account to log in (using Fermilab or Purdue credentials is also possible).
+- You will be redirected to the “Server Options” page. The default resource selection (4 CPUs, 16 GB RAM) is enough for the HATS exercises, but you can select more resources if needed. **Do not add GPUs** to your session – there are not enough GPUs for all participants.
+- Click “Start” to create your Analysis Facility session. It may take a couple of minutes to load.
+- Done! Your session is ready.
+
+- On the left panel, click on the "Git" icon. Then click on "Clone a Repository".
+- Paste this git path in the text box `https://gitlab.cern.ch/cms-analysis/cmsdas/pog/b-tagging.git`.
+- Enter your CERN username and password in the prompt.
+- Go back to the file browser by clicking on the top "File Browser" icon in the left panel. You should now see a new `b-tagging` directory.
+
+- Open a terminal from the main workspace (under "Other").
+- Type
+```shell
+cd b-tagging
+conda env create -f env.yml     #This will take a while
+python -m ipykernel install --user --name=FTAG-Tutorial
+```
+
+- Go back to the file browser and navigate to `b-tagging/notebooks`. Your exercise notebooks are available here. Open the first notebook to start the exercise.
+
+
+### Option 2: Setup with lxplus
+<details>
+  <summary>Click here if you cannot set things up on Purdue AF...</summary>
+Perform these initial steps for the setup at lxplus (e.g. after doing `ssh -l your-lxplus-username@lxplus.cern.ch` from your own machine):
 
 1. Get Miniconda (if you have not yet done so in another exercise)
 ```shell
@@ -33,10 +60,9 @@ Special note: installation may take a while, therefore we recommend (if possible
 ```shell
 mkdir -p ~/private/Tagging
 cd ~/private/Tagging
-git clone ssh://git@gitlab.cern.ch:7999/cms-analysis/cmsdas/pog/b-tagging.git -b HATS2024
+git clone https://gitlab.cern.ch/cms-analysis/cmsdas/pog/b-tagging.git -b HATS2024  # Enter your CERN username and password when prompted
 cd b-tagging
 ```
-(_Alternatively, if you don't have your ssh-key connected to github, replace the above URL with `https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git` in the command, but this can complicate the authentication process._)
 
 3. Install relevant python packages into a conda-environment (comes with the Git repo)
 ```shell
@@ -73,16 +99,19 @@ ssh -L XXXX:localhost:XXXX your-username@lxplusXYZ.cern.ch
 Now open your browser and paste the http-link you copied. Navigate to `notebooks` on your left panel.
 
 All packages to work with the exercises should be available from there, you don't need to use the terminal from now on, just keep the session open while you're working.
+</details>
 
 ## Tutorials
 All individual tutorials / exercises are available from the `notebooks` directory. There are three .ipynb files which are plug-and-play, just (double-)click to open and follow the instructions inside.
 
 Jupyter tip: To run a command, click on it inside the Jupyter notebook and click the play button on the top panel. You can edit the command and rerun it by clicking the run button again. Click the play button again to run the next command, and so on.
 
-### Inputs, Targets and Tagger Outputs
-Explore the inputs which are used to perform jet flavour tagging with some example files. Understand what the machine learning algorithms need to predict by investigating the targets, and compare with what the taggers actually do when passing inputs through the networks by looking at the output scores.
+### Acessing Tagger Outputs
+Access AK4 and AK8 jet tagger information from standard NanoAOD files. Explore how these distributions look like for various flavours of jets and heavy objects.
 ### Performance
 Learn how network performance is evaluated and which performance metrics play a key role for flavour tagging. Perform more studies to evaluate performance as a function of certain parameters and compare across samples.
+### Scale factors
+Scale Factors are essential before we can use taggers on real collision data. Explore one of the methods that are used to compare simulation and data and extract correction factors.
 ### Bonus
 Explore how performance depends on kinematic quantities related to the jet. This is one concept to keep in mind, differential distributions *do* matter (not only inclusive metrics), in this case explored for simple features like pseudorapidity and transverse momentum. Most likely you will also need to adapt to differentially measured scale factors (in bins of disciminators, though) when using such algorithms in an analysis.
 ## Contact
