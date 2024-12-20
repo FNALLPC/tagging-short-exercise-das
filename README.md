@@ -1,4 +1,4 @@
-# Tagging HATS
+# Tagging Short Exercise
 
 Welcome to the Tagging Short Exercise for CMSDAS 2025!
 
@@ -118,10 +118,13 @@ Explore how performance depends on kinematic quantities related to the jet. This
 ## Contact
 This session:
 
-**_Spandan Mondal, 2024_**  
-:email: [spandan.mondal@cern.ch](mailto:spandan.mondal@cern.ch), :computer: [@mondalspandan](https://github.com/mondalspandan)
+**_Irene Dutta, 2025_**  
+:email: [irene.dutta@cern.ch](mailto:irene.dutta@cern.ch), :computer: [@irenedutta23](https://github.com/irenedutta23)
 
 Maintained by:
+
+**_Spandan Mondal, 2024_**  
+:email: [spandan.mondal@cern.ch](mailto:spandan.mondal@cern.ch), :computer: [@mondalspandan](https://github.com/mondalspandan)
 
 **_Sebastian Wuchterl, CMS PO&DAS 2023_**  
 :email: [sebastian.wuchterl@cern.ch](mailto:sebastian.wuchterl@cern.ch), :computer: [@SWuchterl](https://github.com/SWuchterl)
