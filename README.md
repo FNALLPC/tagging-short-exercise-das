@@ -1,6 +1,6 @@
 # Tagging HATS
 
-Welcome to the Tagging HATS 2024!
+Welcome to the Tagging Short Exercise for CMSDAS 2025!
 
 ## Intro
 A set of slides with introductory material, definitions, useful links is available on [Indico](https://indico.cern.ch/event/1443889/sessions/560661/attachments/2913418/5112216/HATS2024.pdf).
@@ -37,6 +37,7 @@ You can now go back to the browser tab you started with that holds your SWAN pro
 - Type
 ```shell
 cd b-tagging
+git checkout -b DAS2025
 conda env create -f env.yml     #This will take a while
 python -m ipykernel install --user --name=FTAG-Tutorial
 ```
