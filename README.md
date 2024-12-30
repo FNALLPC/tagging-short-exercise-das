@@ -45,12 +45,12 @@ python -m ipykernel install --user --name=FTAG-Tutorial
 - Go back to the file browser and navigate to `b-tagging/notebooks`. Your exercise notebooks are available here. Open the first notebook to start the exercise.
 
 
-### Option 2: Setup with lxplus
+### Option 2: Setup with lxplus (slower, not recommended)
 <details>
   <summary>Click here if you cannot set things up on Purdue AF...</summary>
 Perform these initial steps for the setup at lxplus (e.g. after doing `ssh -l your-lxplus-username@lxplus.cern.ch` from your own machine):
 
-1. Get Miniconda (if you have not yet done so in another exercise)
+1. Get Miniconda (if you have not yet done so in another exercise). We recommend that you do this in your eos area i.e. `/eos/user/<u>/<username>/miniconda3`
 ```shell
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
@@ -59,9 +59,9 @@ Special note: installation may take a while, therefore we recommend (if possible
 
 2. Checkout this repository into new directory (example directory given below for convenience)
 ```shell
-mkdir -p ~/private/Tagging
-cd ~/private/Tagging
-git clone https://gitlab.cern.ch/cms-analysis/cmsdas/pog/b-tagging.git -b HATS2024  # Enter your CERN username and password when prompted
+mkdir -p /eos/user/<u>/<username>/CMSDAS2025/Tagging
+cd /eos/user/<u>/<username>/CMSDAS2025/Tagging
+git clone https://gitlab.cern.ch/cms-analysis/cmsdas/pog/b-tagging.git -b DAS2025  # Enter your CERN username and password when prompted
 cd b-tagging
 ```
 
