@@ -102,6 +102,52 @@ Now open your browser and paste the http-link you copied. Navigate to `notebooks
 All packages to work with the exercises should be available from there, you don't need to use the terminal from now on, just keep the session open while you're working.
 </details>
 
+
+### Option 3: Setup on EAF
+<details>
+  <summary>Click here if you cannot set things up on Purdue AF...</summary>
+
+To run on FNAL EAF, you will need to be on the Fermilab fgz network (if you are onsite) or use a VPN (if you are offsite, https://redtop.fnal.gov/guide-to-vpn-connections-to-fermilab/). Then login at  https://analytics-hub.fnal.gov using your FNAL Services credentials. Once you successfully connect, select CMS - CPU Interactives - AL9 Dask (Coffea 0.7.x) [stable](top left) server options, as shown in the image below. 
+
+<img src="server.png" width="600px" />
+
+Click Start at the bottom of the page.
+
+To open a Terminal click on the corresponding option in the Launcher Tab. If the Launcher tab is not open, you can open a new one from the File menu in the top left. This will open a new tab with a bash terminal.
+
+### Upload Grid Certificates - first time only!
+We will copy your grid certificates from the LPC cluster, to do this, got to the terminal you just opened.
+
+Execute the following commands (following the appropriate prompts) to copy your certificate from the LPC to Jupyter (**note**: replace `username` with your `FNAL` username!)
+
+The following command will prompt you for your FNAL password
+```bash
+kinit username@FNAL.GOV
+rsync -rLv username@cmslpc-el9.fnal.gov:.globus/ ~/.globus/
+chmod 755 ~/.globus
+chmod 600 ~/.globus/*
+kdestroy
+```
+
+#### Initialize Your Proxy at every Login!
+If you have a password on your grid certificate, you'll need to remember to execute the following in a terminal *each time you log in to Jupyter*. Similar to the LPC cluster, you will get a new host at each logon, and the new host won't have your old credentials.
+
+Each time you log in, open a terminal and execute:
+```bash
+voms-proxy-init -voms cms -valid 192:00
+```
+
+#### Checkout the code
+Open up a terminal and run the following command from your home area:
+```bash
+git clone https://gitlab.cern.ch/cms-analysis/cmsdas/pog/b-tagging.git -b DAS2025
+```
+
+On the left you should see the `b-tagging` directory you created. Click on it and then on the `notebooks` directory. 
+In it there are three exercise. Start with number 1.
+Select the Python3 (Safe mode) kernel for all of them. 
+</details>
+
 ## Tutorials
 All individual tutorials / exercises are available from the `notebooks` directory. There are three .ipynb files which are plug-and-play, just (double-)click to open and follow the instructions inside.
 
