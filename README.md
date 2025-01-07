@@ -37,7 +37,7 @@ You can now go back to the browser tab you started with that holds your SWAN pro
 - Type
 ```shell
 cd b-tagging
-git checkout -b DAS2025
+git checkout DAS2025
 conda env create -f env.yml     #This will take a while
 python -m ipykernel install --user --name=FTAG-Tutorial
 ```
