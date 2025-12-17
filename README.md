@@ -1,6 +1,6 @@
 # Tagging Short Exercise
 
-Welcome to the Tagging Short Exercise for CMSDAS 2025!
+Welcome to the Tagging Short Exercise for CMSDAS 2026!
 
 ## Intro
 A set of slides with introductory material, definitions, useful links is available on [Indico](https://indico.cern.ch/event/1443889/sessions/560661/attachments/2913418/5112216/HATS2024.pdf).
@@ -14,7 +14,7 @@ If you come here independently, no need to worry. Start similar, pick the defaul
 ```shell
 mkdir -p ~/SWAN_projects/POG-Exercises
 cd ~/SWAN_projects/POG-Exercises
-git clone https://gitlab.cern.ch/cms-podas23/pog/b-tagging.git -b podas
+git clone https://github.com/FNALLPC/tagging-short-exercise-das.git -b podas
 ```
 2. Start ipython notebooks via SWAN  
 You can now go back to the browser tab you started with that holds your SWAN projects. Navigate to the recently cloned directory and open the individual exercises from the `notebooks` folder. -->
@@ -29,20 +29,20 @@ You can now go back to the browser tab you started with that holds your SWAN pro
 - Done! Your session is ready.
 
 - On the left panel, click on the "Git" icon. Then click on "Clone a Repository".
-- Paste this git path in the text box `https://gitlab.cern.ch/cms-analysis/cmsdas/pog/b-tagging.git`.
+- Paste this git path in the text box `https://github.com/FNALLPC/tagging-short-exercise-das.git`.
 - Enter your CERN username and password in the prompt.
-- Go back to the file browser by clicking on the top "File Browser" icon in the left panel. You should now see a new `b-tagging` directory.
+- Go back to the file browser by clicking on the top "File Browser" icon in the left panel. You should now see a new `tagging-short-exercise-das` directory.
 
 - Open a terminal from the main workspace (under "Other").
 - Type
 ```shell
-cd b-tagging
-git checkout DAS2025
+cd tagging
+git checkout cmsdas2026
 conda env create -f env.yml     #This will take a while
 python -m ipykernel install --user --name=FTAG-Tutorial
 ```
 
-- Go back to the file browser and navigate to `b-tagging/notebooks`. Your exercise notebooks are available here. Open the first notebook to start the exercise.
+- Go back to the file browser and navigate to `tagging-short-exercise-das/notebooks`. Your exercise notebooks are available here. Open the first notebook to start the exercise.
 
 
 ### Option 2: Setup with lxplus (slower, not recommended)
@@ -59,10 +59,10 @@ Special note: installation may take a while, therefore we recommend (if possible
 
 2. Checkout this repository into new directory (example directory given below for convenience)
 ```shell
-mkdir -p /eos/user/<u>/<username>/CMSDAS2025/Tagging
-cd /eos/user/<u>/<username>/CMSDAS2025/Tagging
-git clone https://gitlab.cern.ch/cms-analysis/cmsdas/pog/b-tagging.git -b DAS2025  # Enter your CERN username and password when prompted
-cd b-tagging
+mkdir -p /eos/user/<u>/<username>/CMSDAS2026/Tagging
+cd /eos/user/<u>/<username>/CMSDAS2026/Tagging
+git clone https://github.com/FNALLPC/tagging-short-exercise-das.git -b cmsdas2026  # Enter your CERN username and password when prompted
+cd tagging-short-exercise-das
 ```
 
 3. Install relevant python packages into a conda-environment (comes with the Git repo)
@@ -140,10 +140,10 @@ voms-proxy-init -voms cms -valid 192:00
 #### Checkout the code
 Open up a terminal and run the following command from your home area:
 ```bash
-git clone https://gitlab.cern.ch/cms-analysis/cmsdas/pog/b-tagging.git -b DAS2025
+git clone https://github.com/FNALLPC/tagging-short-exercise-das.git -b cmsdas2026
 ```
 
-On the left you should see the `b-tagging` directory you created. Click on it and then on the `notebooks` directory. 
+On the left you should see the `tagging-short-exercise-das` directory you created. Click on it and then on the `notebooks` directory. 
 In it there are three exercise. Start with number 1.
 Select the Python3 (Safe mode) kernel for all of them. 
 </details>
@@ -164,10 +164,13 @@ Explore how performance depends on kinematic quantities related to the jet. This
 ## Contact
 This session:
 
-**_Irene Dutta, 2025_**  
-:email: [irene.dutta@cern.ch](mailto:irene.dutta@cern.ch), :computer: [@irenedutta23](https://github.com/irenedutta23)
+**_Honor Lahare, 2026_**  
+:email: [honor.suzanne.hare@cern.ch](mailto:honor.suzanne.hare@cern.ch), :computer: [@hohare](https://github.com/hohare)
 
 Maintained by:
+
+**_Irene Dutta, 2025_**  
+:email: [irene.dutta@cern.ch](mailto:irene.dutta@cern.ch), :computer: [@irenedutta23](https://github.com/irenedutta23)
 
 **_Spandan Mondal, 2024_**  
 :email: [spandan.mondal@cern.ch](mailto:spandan.mondal@cern.ch), :computer: [@mondalspandan](https://github.com/mondalspandan)
