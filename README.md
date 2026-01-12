@@ -3,7 +3,7 @@
 Welcome to the Tagging Short Exercise for CMSDAS 2026!
 
 ## Intro
-A set of slides with introductory material, definitions, useful links is available on [Indico](https://indico.cern.ch/event/1443889/sessions/560661/attachments/2913418/5112216/HATS2024.pdf).
+A set of slides with introductory material, definitions, useful links is available on [Indico](https://indico.cern.ch/event/1518299/timetable/#100-tagging-exercise).
 <!-- ## Setup with SWAN
 Connect to https://swan.cern.ch/
 
@@ -38,14 +38,79 @@ You can now go back to the browser tab you started with that holds your SWAN pro
 ```shell
 cd tagging
 git checkout cmsdas2026
-conda env create -f env.yml     #This will take a while
+```
+
+- Go back to the file browser and navigate to `tagging-short-exercise-das/notebooks`. Your exercise notebooks are available here. Open the first notebook to start the exercise and select `Python (pixi global)` as your kernel.
+
+
+### Option 2: Setup on EAF
+<details>
+  <summary>Click here if you cannot set things up on Purdue AF...</summary>
+
+To run on FNAL EAF, you will need to be on the Fermilab fgz network (if you are onsite) or use a VPN (if you are offsite, https://redtop.fnal.gov/guide-to-vpn-connections-to-fermilab/). Then login at  https://analytics-hub.fnal.gov using your FNAL Services credentials. Once you successfully connect, select CMS - CPU Interactives - AL9 Dask (Coffea 0.7.x) [stable](top left) server options, as shown in the image below. 
+
+<img src="server.png" width="600px" />
+
+Click Start at the bottom of the page.
+
+To open a Terminal click on the corresponding option in the Launcher Tab. If the Launcher tab is not open, you can open a new one from the File menu in the top left. This will open a new tab with a bash terminal.
+
+1. The default kernel `Python 3` is sufficient for notebooks 1-3, but for the heavy resonance tagging notebook, we will need to install [Miniforge](https://github.com/conda-forge/miniforge?tab=readme-ov-file).
+
+```shell
+wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+bash Miniforge3-$(uname)-$(uname -m).sh
+```
+
+2. Checkout this repository into new directory (example directory given below for convenience)
+```shell
+mkdir -p /home/username/uscmsdata/CMSDAS2026/Tagging
+cd /home/username/uscmsdata/CMSDAS2026/Tagging
+git clone https://github.com/FNALLPC/tagging-short-exercise-das.git -b cmsdas2026
+cd tagging-short-exercise-das
+```
+
+3. Install relevant python packages into a conda-environment (comes with the Git repo)
+```shell
+conda env create -f env.yml
 python -m ipykernel install --user --name=FTAG-Tutorial
 ```
 
-- Go back to the file browser and navigate to `tagging-short-exercise-das/notebooks`. Your exercise notebooks are available here. Open the first notebook to start the exercise.
+4. Upload Grid Certificates - first time only!
+We will copy your grid certificates from the LPC cluster, to do this, got to the terminal you just opened.
+Execute the following commands (following the appropriate prompts) to copy your certificate from the LPC to Jupyter (**note**: replace `username` with your `FNAL` username!)
+
+The following command will prompt you for your FNAL password
+```bash
+kinit username@FNAL.GOV
+rsync -rLv username@cmslpc-el9.fnal.gov:.globus/ ~/.globus/
+chmod 755 ~/.globus
+chmod 600 ~/.globus/*
+kdestroy
+```
+
+5. Initialize Your Proxy at every Login!
+If you have a password on your grid certificate, you'll need to remember to execute the following in a terminal *each time you log in to Jupyter*. Similar to the LPC cluster, you will get a new host at each logon, and the new host won't have your old credentials.
+
+Each time you log in, open a terminal and execute:
+```bash
+voms-proxy-init -voms cms -valid 192:00
+```
+
+6. Open up a terminal and run the following command from your home area to activate your conda env:
+```bash
+conda activate FTAG-Tutorial
+```
+
+On the left you should see the `tagging-short-exercise-das` directory you created. Click on it and then on the `notebooks` directory. 
+In it there are four exercises. Start with number 1.
+
+If doing exercises 1-3, you can use the `Python3 (Safe mode)` kernel.
+If doing exercise 4-heavy-resonance-tagging, you need to use the `Python [conda env:.conda-FTAG-Tutorial]` kernel.
+</details>
 
 
-### Option 2: Setup with lxplus (slower, not recommended)
+### Option 3: Setup with lxplus (slower, not recommended)
 <details>
   <summary>Click here if you cannot set things up on Purdue AF...</summary>
 Perform these initial steps for the setup at lxplus (e.g. after doing `ssh -l your-lxplus-username@lxplus.cern.ch` from your own machine):
@@ -69,6 +134,7 @@ cd tagging-short-exercise-das
 ```shell
 conda env create -f env.yml
 ```
+
 4. Connect to a screen session (to start jupyter lab server and open in browser). A screen session ensures that your jupyter server keeps running within lxplus even if your ssh session get disconnected from lxplus.
 ```shell
 screen -S server
@@ -103,64 +169,23 @@ All packages to work with the exercises should be available from there, you don'
 </details>
 
 
-### Option 3: Setup on EAF
-<details>
-  <summary>Click here if you cannot set things up on Purdue AF...</summary>
-
-To run on FNAL EAF, you will need to be on the Fermilab fgz network (if you are onsite) or use a VPN (if you are offsite, https://redtop.fnal.gov/guide-to-vpn-connections-to-fermilab/). Then login at  https://analytics-hub.fnal.gov using your FNAL Services credentials. Once you successfully connect, select CMS - CPU Interactives - AL9 Dask (Coffea 0.7.x) [stable](top left) server options, as shown in the image below. 
-
-<img src="server.png" width="600px" />
-
-Click Start at the bottom of the page.
-
-To open a Terminal click on the corresponding option in the Launcher Tab. If the Launcher tab is not open, you can open a new one from the File menu in the top left. This will open a new tab with a bash terminal.
-
-### Upload Grid Certificates - first time only!
-We will copy your grid certificates from the LPC cluster, to do this, got to the terminal you just opened.
-
-Execute the following commands (following the appropriate prompts) to copy your certificate from the LPC to Jupyter (**note**: replace `username` with your `FNAL` username!)
-
-The following command will prompt you for your FNAL password
-```bash
-kinit username@FNAL.GOV
-rsync -rLv username@cmslpc-el9.fnal.gov:.globus/ ~/.globus/
-chmod 755 ~/.globus
-chmod 600 ~/.globus/*
-kdestroy
-```
-
-#### Initialize Your Proxy at every Login!
-If you have a password on your grid certificate, you'll need to remember to execute the following in a terminal *each time you log in to Jupyter*. Similar to the LPC cluster, you will get a new host at each logon, and the new host won't have your old credentials.
-
-Each time you log in, open a terminal and execute:
-```bash
-voms-proxy-init -voms cms -valid 192:00
-```
-
-#### Checkout the code
-Open up a terminal and run the following command from your home area:
-```bash
-git clone https://github.com/FNALLPC/tagging-short-exercise-das.git -b cmsdas2026
-```
-
-On the left you should see the `tagging-short-exercise-das` directory you created. Click on it and then on the `notebooks` directory. 
-In it there are three exercise. Start with number 1.
-Select the Python3 (Safe mode) kernel for all of them. 
-</details>
-
 ## Tutorials
-All individual tutorials / exercises are available from the `notebooks` directory. There are three .ipynb files which are plug-and-play, just (double-)click to open and follow the instructions inside.
+All individual tutorials / exercises are available from the `notebooks` directory. There are four .ipynb files which are plug-and-play, just (double-)click to open and follow the instructions inside.
 
-Jupyter tip: To run a command, click on it inside the Jupyter notebook and click the play button on the top panel. You can edit the command and rerun it by clicking the run button again. Click the play button again to run the next command, and so on.
+Jupyter tip: To run a command, click on it inside the Jupyter notebook and click the play button on the top panel. You can edit the command and rerun it by clicking the run button again. Click the play button again to run the next command, and so on. An alternative to the play button is to press Shift+Return.
 
 ### Acessing Tagger Outputs
 Access AK4 and AK8 jet tagger information from standard NanoAOD files. Explore how these distributions look like for various flavours of jets and heavy objects.
 ### Performance
 Learn how network performance is evaluated and which performance metrics play a key role for flavour tagging. Perform more studies to evaluate performance as a function of certain parameters and compare across samples.
-### Scale factors
+### Scale Factors
 Scale Factors are essential before we can use taggers on real collision data. Explore one of the methods that are used to compare simulation and data and extract correction factors.
-### Bonus
-Explore how performance depends on kinematic quantities related to the jet. This is one concept to keep in mind, differential distributions *do* matter (not only inclusive metrics), in this case explored for simple features like pseudorapidity and transverse momentum. Most likely you will also need to adapt to differentially measured scale factors (in bins of disciminators, though) when using such algorithms in an analysis.
+### Heavy Resonance Tagging
+Make your own tagger for heavy-resonances and compare yours to the CMS taggers. 
+Explore how performance depends on kinematic quantities related to the jet.
+This is one concept to keep in mind, differential distributions *do* matter (not only inclusive metrics), in this case explored for simple features like pseudorapidity and transverse momentum. Most likely you will also need to adapt to differentially measured scale factors (in bins of disciminators, though) when using such algorithms in an analysis.
+
+
 ## Contact
 This session:
 
